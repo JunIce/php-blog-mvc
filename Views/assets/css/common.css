@@ -1,0 +1,82 @@
+@charset "utf-8";
+body{
+  background-color: #ffffff;
+  font: 14px/1.5  PingFangSC-Regular, monospace;
+  text-align: center;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+header{
+  text-align: right;
+}
+header a{
+  display: inline-block;
+  padding: 10px 20px;
+}
+header a:hover{
+  background-color: #0af;
+  color: #fff;
+}
+.post-main{
+  width: 800px;
+  margin: 0 auto;
+}
+.post-item{
+  padding: 20px 0;
+  /* border-bottom: 1px solid #333; */
+  color: #333;
+}
+.post-item:hover{
+  border-radius: 20px;
+  box-shadow: 2px 0px 34px #ddd;
+}
+.post-time{
+  padding: 20px 0;
+}
+.post-detail{
+  padding: 20px;
+  background-color: #f4f4f4;
+  line-height: 24px;
+}
+.login-form{
+  text-align: left;
+}
+.login-form  label{
+  display: inline-block;
+  width: 120px;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.login-form div{
+  padding: 30px 0;
+}
+.login-form input{
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 18px;
+  color: #333;
+  outline: none;
+}
+input[type='submit'] {
+  background: #0af;
+  color: #fff;
+  border: none;
+}
+input[type='submit']:hover{
+  box-shadow: 2px 0 12px #ddd;
+}
+input[type='submit']:active{
+  background-color: #039be8
+}
+.user-detail{
+  text-align: left;
+  padding: 35px;
+  line-height: 35px;
+  font-size: 20px;
+}
+.user-detail-name{
+  font-size: 18px;
+  color: #666;
+}
