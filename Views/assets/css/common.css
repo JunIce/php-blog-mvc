@@ -43,21 +43,22 @@ header a:hover{
 .login-form{
   text-align: left;
 }
-.login-form  label{
+.add_form label,.login-form  label{
   display: inline-block;
   width: 120px;
   font-size: 18px;
   margin-bottom: 12px;
 }
-.login-form div{
+.add_form div,.login-form div{
   padding: 30px 0;
 }
-.login-form input{
+.add_form input,.login-form input{
   width: 100%;
   padding: 8px 12px;
   font-size: 18px;
   color: #333;
   outline: none;
+  box-sizing: border-box;
 }
 input[type='submit'] {
   background: #0af;
@@ -79,4 +80,23 @@ input[type='submit']:active{
 .user-detail-name{
   font-size: 18px;
   color: #666;
+}
+
+.add_form input, .add_form textarea{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 12px;
+  color: #333;
+  outline: none;
+  border-color: #666;
+  border-width: 1px;
+}
+.add_form label{
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+}
+.add_form textarea{
+  font-size: 18px;
+  resize: none;
 }

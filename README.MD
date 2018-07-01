@@ -1,4 +1,4 @@
-### 通过练习书写blog 进一步了解PHP 和 MVC方式
+### 通过练习书写blog,进一步了解PHP和MVC方式
 
 [github](https://github.com/JunIce/php-blog-mvc) 喜欢的给个star
 
@@ -15,7 +15,7 @@
         > spl_autoload_register
         > 欲注册的自动装载函数。如果没有提供任何参数，则自动注册    autoload 的默认实现函数spl_autoload()。
 
-        根据函数特性， 编写Loader类， 这里看出命名空间的名称和文件夹的名称有很大关系， 所以我这里采用的是命名空间名称和文件夹名称一样的，方便引入，其他方式也不是不行，具体引入标准看[PHP PSR 代码规范](https://www.cnblogs.com/woider/p/6440844.html)
+        根据函数特性， 编写Loader类, 这里看出命名空间的名称和文件夹的名称有很大关系， 所以我这里采用的是命名空间名称和文件夹名称一样的，方便引入，其他方式也不是不行，具体引入标准看[PHP PSR 代码规范](https://www.cnblogs.com/woider/p/6440844.html)
 
         ```php
         private static function findFile($class)

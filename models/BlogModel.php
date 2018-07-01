@@ -21,4 +21,21 @@ class BlogModel {
     $stmt->execute(array($id));
     return $stmt->fetch(\PDO::FETCH_ASSOC);
   }
+  // post 增加信息
+  public function post($add)
+  {
+    $query = $this->conn->prepare("INSERT INTO Posts (`title`, `body`, `createdDate`) VALUES(:title, :body, :create_at)");
+    try{
+      $this->conn->beginTransaction();
+      $time = date("Y-m-d H:i:s");
+      $query->bindParam(':title', $add['title'], \PDO::PARAM_STR);
+      $query->bindParam(':body', $add['body'], \PDO::PARAM_STR);
+      $query->bindParam(':create_at', $time, \PDO::PARAM_STR);
+      $query->execute();
+      $this->conn->commit();
+    }
+    catch(PDOExpection $e) {
+      $this->conn->rollBack();
+    }
+  }
 }
