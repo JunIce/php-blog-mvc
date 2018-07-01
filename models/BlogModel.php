@@ -38,4 +38,25 @@ class BlogModel {
       $this->conn->rollBack();
     }
   }
+
+  public function delete($id)
+  {
+    $query = $this->conn->prepare("DELETE FROM Posts WHERE `id` = :id");
+    try{
+      $this->conn->beginTransaction();
+      $query->bindParam(':id', $id, \PDO::PARAM_INT);
+      $query->execute();
+      $this->conn->commit();
+    }
+    catch(PDOExpection $e) {
+      $this->conn->rollBack();
+    }
+  }
+
+  // 检查单条信息是否存在
+  public function info_is_exists($id)
+  {
+    $sql = "SELECT * FROM Posts WHERE `id` = $id LIMIT 1";
+    return $this->conn->exec($sql);
+  }
 }

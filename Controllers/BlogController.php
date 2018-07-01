@@ -8,18 +8,21 @@ use App\Traits\SessionTrait;
 class BlogController {
   use ViewTrait; // 获取模版
   use SessionTrait;
+  // 首页列表
   public function index ()
   {
     $model = new BlogModel();
     $this->getView('index', $model->all());
   }
 
+  // 内容详情
   public function detail ($id)
   {
     $model = new BlogModel();
     $this->getView('detail', $model->one($id));
   }
 
+  // 增加一条信息
   public function add ()
   {
     if(!$this->is_Login()) {
@@ -33,5 +36,13 @@ class BlogController {
       echo "发布成功";
       header("Location: /");
     }
+  }
+
+  // 删除信息
+  public function delInfo($id)
+  {
+    $model = new BlogModel();
+    $model->delete((int)$id);
+    $this->getView('message', ['message' => 'del success!!']);
   }
 }
